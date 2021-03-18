@@ -18,10 +18,10 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install ansiwrap capstone colour cxxfilt colorama gitpython lark-parser msgpack ninja_syntax pypng \
     python-Levenshtein PyYAML stringcase watchdog
 
-RUN cp ccache /usr/local/bin/
-RUN ln -s ccache /usr/local/bin/gcc
-RUN ln -s ccache /usr/local/bin/g++
-RUN ln -s ccache /usr/local/bin/cc
-RUN ln -s ccache /usr/local/bin/c++
+RUN cp /usr/bin/ccache /usr/local/bin/
+#RUN ln -s ccache /usr/local/bin/gcc
+#RUN ln -s ccache /usr/local/bin/g++
+#RUN ln -s ccache /usr/local/bin/cc
+#RUN ln -s ccache /usr/local/bin/c++
 
 USER jenkins
