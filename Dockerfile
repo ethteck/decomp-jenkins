@@ -24,4 +24,7 @@ RUN ln -s ccache /usr/local/bin/g++
 RUN ln -s ccache /usr/local/bin/cc
 RUN ln -s ccache /usr/local/bin/c++
 
+RUN cd /usr/bin && wget https://github.com/zeldaret/oot/releases/download/0.1q/qemu-irix
+RUN chmod +x /usr/bin/qemu-irix
+
 USER jenkins
