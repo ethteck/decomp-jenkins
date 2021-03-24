@@ -50,4 +50,4 @@ RUN git clone https://github.com/pret/agbcc
 RUN cd agbcc && ./build.sh
 
 RUN echo "export AGBCC=$PWD" >> ~/.bashrc
-source /etc/profile.d/devkit-env.sh
+RUN source /etc/profile.d/devkit-env.sh
