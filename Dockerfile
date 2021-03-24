@@ -4,6 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 USER root
 
+RUN dpkg --add-architecture i386
+
 RUN apt-get update && apt-get install -y \
     binutils-mips-linux-gnu \
     build-essential \
@@ -16,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-setuptools \
-    wine \
+    wine32 \
     zlib1g-dev
 
 RUN pip3 install ansiwrap capstone colour cxxfilt colorama gitpython lark-parser msgpack ninja_syntax pypng \
