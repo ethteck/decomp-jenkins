@@ -53,4 +53,4 @@ ENV PATH=${DEVKITPRO}/tools/bin:$PATH
 # agbcc
 RUN git clone https://github.com/pret/agbcc
 RUN cd agbcc && ./build.sh
-ENV AGBCC=${PWD}
+ENV AGBCC=/home/jenkins/agbcc
