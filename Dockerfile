@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     gdebi \
     ccache \
     libcapstone-dev \
+    libpng-dev \
     libyaml-dev \
     ninja-build \
     pkg-config \
