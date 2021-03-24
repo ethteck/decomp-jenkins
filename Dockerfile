@@ -45,10 +45,10 @@ RUN dkp-pacman -S gba-dev --noconfirm
 
 USER jenkins
 
-export DEVKITPRO=/opt/devkitpro
-export DEVKITARM=${DEVKITPRO}/devkitARM
-export DEVKITPPC=${DEVKITPRO}/devkitPPC
-export PATH=${DEVKITPRO}/tools/bin:$PATH
+RUN export DEVKITPRO=/opt/devkitpro
+RUN export DEVKITARM=${DEVKITPRO}/devkitARM
+RUN export DEVKITPPC=${DEVKITPRO}/devkitPPC
+RUN export PATH=${DEVKITPRO}/tools/bin:$PATH
 
 # agbcc
 RUN git clone https://github.com/pret/agbcc
