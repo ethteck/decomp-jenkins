@@ -40,7 +40,7 @@ RUN wget https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-
 RUN gdebi -n devkitpro-pacman.amd64.deb
 
 # dkp-pacman gba
-RUN dkp-pacman -S gba-dev
+RUN dkp-pacman -S gba-dev --noconfirm
 
 
 USER jenkins
