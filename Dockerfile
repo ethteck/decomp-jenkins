@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     binutils-mips-linux-gnu \
     build-essential \
     ccache \
+    gdebi \
     libcapstone-dev \
     libyaml-dev \
     ninja-build \
@@ -21,13 +22,31 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install ansiwrap capstone colour cxxfilt colorama gitpython lark-parser msgpack ninja_syntax pypng \
     python-Levenshtein PyYAML stringcase watchdog
 
+# ccache
 RUN cp /usr/bin/ccache /usr/local/bin/
 RUN ln -s ccache /usr/local/bin/gcc
 RUN ln -s ccache /usr/local/bin/g++
 RUN ln -s ccache /usr/local/bin/cc
 RUN ln -s ccache /usr/local/bin/c++
 
+# qemu-irix
 RUN cd /usr/bin && wget https://github.com/zeldaret/oot/releases/download/0.1q/qemu-irix
 RUN chmod +x /usr/bin/qemu-irix
 
+# devkitPro pacman
+RUN wget https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-pacman.amd64.deb
+RUN gdebi devkitpro-pacman.amd64.deb
+
+# dkp-pacman gba
+RUN dkp-pacman -S gba-dev
+
+
 USER jenkins
+
+# agbcc
+RUN git clone https://github.com/pret/agbcc
+RUN cd agbcc && build.sh
+
+RUN echo "export AGBCC=$PWD" >> ~/.bashrc
+RUN echo "export DEVKITPRO=/opt/devkitpro" >> ~/.bashrc
+RUN echo "export DEVKITARM=$DEVKITPRO/devkitARM" >> ~/.bashrc
