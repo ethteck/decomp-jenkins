@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     binutils-mips-linux-gnu \
     build-essential \
     ccache \
+    libcapstone-dev \
     libyaml-dev \
     ninja-build \
     python3 \
