@@ -45,6 +45,9 @@ RUN dkp-pacman -S gba-dev --noconfirm
 
 USER jenkins
 
+RUN ls -l /opt/devkitpro
+RUN ls -l /opt/devkitpro/devkitARM
+
 RUN export DEVKITPRO=/opt/devkitpro
 RUN export DEVKITARM=${DEVKITPRO}/devkitARM
 RUN export DEVKITPPC=${DEVKITPRO}/devkitPPC
