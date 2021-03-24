@@ -46,8 +46,8 @@ RUN dkp-pacman -S gba-dev --noconfirm
 USER jenkins
 
 # agbcc
+RUN source /etc/profile.d/devkit-env.sh
+
 RUN git clone https://github.com/pret/agbcc
 RUN cd agbcc && ./build.sh
-
 RUN echo "export AGBCC=$PWD" >> ~/.bashrc
-RUN source /etc/profile.d/devkit-env.sh
