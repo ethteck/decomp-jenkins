@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     binutils-mips-linux-gnu \
     build-essential \
     ccache \
-    gdebi \
     libcapstone-dev \
     libyaml-dev \
     ninja-build \
@@ -37,7 +36,7 @@ RUN chmod +x /usr/bin/qemu-irix
 
 # devkitPro pacman
 RUN wget https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-pacman.amd64.deb
-RUN gdebi devkitpro-pacman.amd64.deb
+RUN dpkg -i devkitpro-pacman.amd64.deb
 
 # dkp-pacman gba
 RUN dkp-pacman -S gba-dev
