@@ -45,14 +45,12 @@ RUN dkp-pacman -S gba-dev --noconfirm
 
 USER jenkins
 
-RUN ls -l /opt/devkitpro/devkitARM/bin
-
-RUN export DEVKITPRO=/opt/devkitpro
-RUN export DEVKITARM=${DEVKITPRO}/devkitARM
-RUN export DEVKITPPC=${DEVKITPRO}/devkitPPC
-RUN export PATH=${DEVKITPRO}/tools/bin:$PATH
+ENV DEVKITPRO=/opt/devkitpro
+ENV DEVKITARM=${DEVKITPRO}/devkitARM
+ENV DEVKITPPC=${DEVKITPRO}/devkitPPC
+ENV PATH=${DEVKITPRO}/tools/bin:$PATH
 
 # agbcc
 RUN git clone https://github.com/pret/agbcc
 RUN cd agbcc && ./build.sh
-RUN echo "export AGBCC=$PWD" >> ~/.bashrc
+ENV AGBCC=${PWD}
