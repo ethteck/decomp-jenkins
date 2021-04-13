@@ -9,6 +9,6 @@
 
 3. Run the image, mounting the roms dir. Replace `<SECRET>` and `<AGENT_NAME>` with your given secret and agent name.
 ```
-docker run -v "$(pwd)"/roms:/usr/local/etc/roms --init decomp:latest -url https://jenkins.zelda64.dev/ <SECRET> <AGENT_NAME>
+docker run -v "$(pwd)"/roms:/usr/local/etc/roms --init decomp:latest -url https://jenkins.deco.mp/ <SECRET> <AGENT_NAME>
 ```
 
