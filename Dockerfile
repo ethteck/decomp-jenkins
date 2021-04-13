@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev
 
 RUN pip3 install ansiwrap capstone colour cxxfilt colorama gitpython lark-parser msgpack ninja_syntax pypng \
-    python-Levenshtein PyYAML stringcase watchdog
+    python-Levenshtein pylibyaml PyYAML stringcase watchdog
 
 # ccache
 RUN cp /usr/bin/ccache /usr/local/bin/
