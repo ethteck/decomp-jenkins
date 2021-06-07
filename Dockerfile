@@ -22,8 +22,8 @@ RUN apt-get update && apt-get install -y \
     wine32 \
     zlib1g-dev
 
-RUN pip3 install ansiwrap capstone colour cxxfilt colorama gitpython lark-parser msgpack ninja_syntax pypng \
-    python-Levenshtein pylibyaml PyYAML stringcase watchdog
+RUN pip3 install ansiwrap attrs capstone colour cxxfilt colorama gitpython lark-parser libyaz0 msgpack ninja_syntax pypng \
+    pyelftools python-Levenshtein pylibyaml PyYAML stringcase watchdog
 
 # ccache
 RUN cp /usr/bin/ccache /usr/local/bin/
