@@ -1,15 +1,16 @@
 # Decomp Jenkins Agent Dockerfile
 
-1. Build the docker image:
-`docker build . -t decomp`
+1. Obtain an agent name and agent secret from your network administrator.
 
-2. Create a roms dir and add relevant roms to it
-`mkdir roms` 
-`cp some_roms_here roms/`
-
-3. Run the image, mounting the roms dir. Replace `<SECRET>` and `<AGENT_NAME>` with your given secret and agent name.
+2. Install the jenkins user agent.
+```bash
+./install.sh <agent_name> <roms_path> <agent_secret>
 ```
-docker run -v "$(pwd)"/roms:/usr/local/etc/roms --init decomp:latest -url https://jenkins.deco.mp/ <SECRET> <AGENT_NAME>
+
+3. If you wish to run the agent manually outside of systemctl, you can run:
+```bash
+sudo systemctl stop decomp-jenkins
+sudo su - <agent_name> -c 'docker run -v $HOME/decomp-jenkins/roms:/usr/local/etc/roms --init decomp:latest -url https://jenkins.deco.mp/ $(cat $HOME/decomp-jenkins/jenkins-secret) $USER'
 ```
 
 ## Supported Roms
