@@ -1,0 +1,14 @@
+[Unit]
+Description=Decomp jenkins user agent
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=<AGENT_NAME>
+ExecStart=/bin/bash -c 'docker run -v $HOME/decomp-jenkins/roms:/usr/local/etc/roms --init decomp:latest -url https://jenkins.deco.mp/ $(cat $HOME/decomp-jenkins/jenkins-secret) $USER'
+
+[Install]
+WantedBy=multi-user.target
