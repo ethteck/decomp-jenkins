@@ -21,7 +21,8 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-setuptools \
     wine32 \
-    zlib1g-dev
+    zlib1g-dev \
+    clang-format-11
 
 RUN pip3 install ansiwrap attrs capstone colour cxxfilt colorama gitpython lark-parser libyaz0 msgpack ninja_syntax pypng \
     pyelftools python-Levenshtein pylibyaml PyYAML stringcase watchdog
