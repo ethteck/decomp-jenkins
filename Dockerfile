@@ -9,9 +9,9 @@ RUN dpkg --add-architecture i386
 RUN apt-get update && apt-get install -y \
     binutils-mips-linux-gnu \
     build-essential \
-    ccache \
-    clang-format-11 \
     gdebi \
+    ccache \
+    wget \
     libcapstone-dev \
     libpng-dev \
     libyaml-dev \
@@ -20,7 +20,6 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-setuptools \
-    wget \
     wine32 \
     zlib1g-dev
 
