@@ -54,7 +54,6 @@ RUN gdebi -n devkitpro-pacman.amd64.deb
 RUN ln -f -s /proc/self/mounts /etc/mtab
 RUN dkp-pacman -S gba-dev --noconfirm
 
-
 USER jenkins
 
 ENV DEVKITPRO=/opt/devkitpro
