@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     binutils-mips-linux-gnu \
     build-essential \
     ccache \
-    clang-format-11 \
     gdebi \
     libcapstone-dev \
     libpng-dev \
@@ -26,6 +25,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install ansiwrap attrs capstone colour cxxfilt colorama gitpython lark-parser libyaz0 msgpack ninja_syntax pypng \
     pyelftools python-Levenshtein pylibyaml PyYAML stringcase watchdog
+
+# llvm
+RUN wget https://apt.llvm.org/llvm.sh
+RUN chmod +x llvm.sh
+RUN ./llvm.sh 11
 
 # ccache
 RUN cp /usr/bin/ccache /usr/local/bin/
