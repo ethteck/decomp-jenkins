@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     binutils-mips-linux-gnu \
     build-essential \
     ccache \
+    cmake \
     cpp-mips-linux-gnu \
     gdebi \
     libcapstone-dev \
