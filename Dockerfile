@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev
 
 RUN pip3 install ansiwrap attrs capstone colour cxxfilt colorama gitpython lark-parser libyaz0 msgpack ninja_syntax pypng \
-    pyelftools python-Levenshtein pylibyaml PyYAML stringcase watchdog
+    pyelftools python-Levenshtein pylibyaml PyYAML stringcase watchdog pycparser
 
 # llvm
 RUN wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && ./llvm.sh 11
