@@ -33,7 +33,7 @@ RUN pip3 install ansiwrap attrs capstone colour cxxfilt colorama gitpython lark-
 
 # llvm
 RUN wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && ./llvm.sh 11
-RUN apt-get update && apt-get install -y clang-format-11
+RUN apt-get update && apt-get install -y clang-format-11 clang-tidy-11
 
 # ccache
 RUN cp /usr/bin/ccache /usr/local/bin/ && \
