@@ -1,31 +1,34 @@
 # Decomp Jenkins Agent Dockerfile
 
-1. Build the Docker image:
-```sh
-docker build . -t decomp-jenkins
-```
+This repo contains the `Dockerfile` used to create a [Jenkins Agent](https://www.jenkins.io/doc/book/using/using-agents/) that contains the programs and packages used in a number of Decomp projects.
 
-2. Create a `roms` directory and add the relevant ROMs to it
+## Running the Jenkins Agent
+
+Create a `roms` directory and add the relevant ROMs to it
+
 ```sh
 mkdir -p roms
 cp some_roms_here roms/
 ```
 
-3. Run the image, mounting the `roms` dir. Replace `<SECRET>` and `<AGENT_NAME>` with your given secret and agent name
-```sh
-export SECRET=<SECRET>
-export AGENT_NAME=<AGENT_NAME>
+Spin up a Docker container, mounting in the `roms` directory that you just created
 
+**NOTE:** Replace `MY_SECRET` and `MY_AGENT_NAME` with your given secret and agent name.
+
+```sh
 docker run \
     -v "$(pwd)"/roms:/usr/local/etc/roms \
-    --init decomp-jenkins:latest -url https://jenkins.deco.mp/ ${SECRET} ${AGENT_NAME}
+    --init ghcr.io/ethteck/decomp-jenkins:latest \
+    -url https://jenkins.deco.mp/ MY_SECRET MY_AGENT_NAME
 ```
 
-## Supported Roms
+**NOTE:** You can pass the `--detach` argument to `docker run` to run the container in the background.
 
-Below are the supported ROMs and their filenames. They should be placed in your `roms` directory for our Jenkins platform
+## Supported ROMs
 
-| Game (version) | Desired filename  | sha256                                                             |
+Below are the supported ROMs and their filenames. They should be placed in your `roms` directory.
+
+| Game (version) | Desired filename  | SHA256 Hash                                                        |
 | -------------- | ----------------- | ------------------------------------------------------------------ |
 | OOT MQ Debug   | baserom_oot.z64   | `38aff72bac70f1dcd1562174aa271a8e136bfa94f585a132ce892e40c4775a6f` |
 | MM US          | mm.us.rev1.z64    | `efb1365b3ae362604514c0f9a1a2d11f5dc8688ba5be660a37debf5e3be43f2b` |
@@ -36,3 +39,11 @@ Below are the supported ROMs and their filenames. They should be placed in your 
 | TMC EU         | tmc.eu.gba        | `c84645731952b7677f514ae222683504066334ab2af904e64a8a84ffc1af46c6` |
 | TMC JP         | tmc.jp.gba        | `16ac2572ba17e9cb2a70093d41f97ef8cff66c56417e45ea98adacdc51bb4b38` |
 | TMC US         | tmc.us.gba        | `bedc74df62755f705398273de8ed3bc59be610cf55760d0b9aa277f1f5035e73` |
+
+## Building image locally
+
+If you wish to make changes to the `Dockerfile`, you can build your own version of the image:
+
+```sh
+docker build . -t decomp-jenkins
+```
