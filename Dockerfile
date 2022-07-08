@@ -52,7 +52,8 @@ RUN pip3 install --no-cache \
     python-Levenshtein \
     python-ranges \
     pyyaml \
-    spimdisasm \
+    rabbitizer>=1.0.0 \
+    spimdisasm>=1.3.0 \
     stringcase \
     toml \
     tqdm \
