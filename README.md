@@ -4,7 +4,7 @@ This repo contains the `Dockerfile` used to create a [Jenkins Agent](https://www
 
 ## Running the Jenkins Agent
 
-Create a `roms` directory and add the relevant ROMs to it
+Create a `roms` directory and add the relevant ROMs to it:
 
 ```sh
 mkdir -p roms
