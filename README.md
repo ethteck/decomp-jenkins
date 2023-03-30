@@ -41,6 +41,7 @@ Below are the supported ROMs and their filenames. They should be placed in your 
 | TMC EU           | tmc.eu.gba        | `c84645731952b7677f514ae222683504066334ab2af904e64a8a84ffc1af46c6` |
 | TMC JP           | tmc.jp.gba        | `16ac2572ba17e9cb2a70093d41f97ef8cff66c56417e45ea98adacdc51bb4b38` |
 | TMC US           | tmc.us.gba        | `bedc74df62755f705398273de8ed3bc59be610cf55760d0b9aa277f1f5035e73` |
+| Animal Forest    | af.z64            | `d9417be056534fcc0bdff2e6cd5f1135511be7c0a4dace04a96a2649596ce908` |
 
 ## Building image locally
 
