@@ -59,7 +59,7 @@ RUN pip3 install --no-cache \
     tqdm \
     watchdog
 
-# llvm
+# llvm 11
 RUN wget https://apt.llvm.org/llvm.sh \
     && chmod +x llvm.sh \
     && ./llvm.sh 11 \
@@ -67,6 +67,15 @@ RUN wget https://apt.llvm.org/llvm.sh \
 RUN apt-get update && apt-get install -y \
     clang-format-11 \
     clang-tidy-11
+
+# llvm 14
+RUN wget https://apt.llvm.org/llvm.sh \
+    && chmod +x llvm.sh \
+    && ./llvm.sh 14 \
+    && rm ./llvm.sh
+RUN apt-get update && apt-get install -y \
+    clang-format-14 \
+    clang-tidy-14
 
 # ccache
 RUN cp /usr/bin/ccache /usr/local/bin/ \
