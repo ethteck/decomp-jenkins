@@ -106,3 +106,4 @@ ENV AGBCC=/home/jenkins/agbcc
 
 # cargo
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
+ENV PATH=/home/jenkins/.cargo/bin:$PATH
