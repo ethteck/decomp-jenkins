@@ -103,3 +103,6 @@ RUN git clone https://github.com/pret/agbcc \
     && cd agbcc \
     && ./build.sh
 ENV AGBCC=/home/jenkins/agbcc
+
+# cargo
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
