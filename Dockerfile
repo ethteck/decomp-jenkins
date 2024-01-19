@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent:latest-jdk11
+FROM jenkins/inbound-agent@bf85446043b58f993f02b6119bc31088a31f8966c2022ee3133e5feddcbca8de
 
 ENV DEBIAN_FRONTEND=noninteractive
 
