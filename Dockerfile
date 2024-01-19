@@ -32,7 +32,7 @@ RUN dpkg --add-architecture i386 && apt-get update \
         -o APT::Immediate-Configure=false wine32 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache --break-system-packages \
+RUN pip3 install --no-cache \
     ansiwrap \
     attrs \
     capstone \
