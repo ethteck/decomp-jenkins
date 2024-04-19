@@ -28,20 +28,21 @@ docker run \
 
 Below are the supported ROMs and their filenames. They should be placed in your `roms` directory.
 
-| Game (version)   | Desired filename  | SHA256 Hash                                                        |
-| ---------------- | ----------------- | ------------------------------------------------------------------ |
-| OOT MQ Debug     | baserom_oot.z64   | `38aff72bac70f1dcd1562174aa271a8e136bfa94f585a132ce892e40c4775a6f` |
-| MM US            | mm.us.rev1.z64    | `efb1365b3ae362604514c0f9a1a2d11f5dc8688ba5be660a37debf5e3be43f2b` |
-| Paper Mario JP   | papermario.jp.z64 | `a62c669817f87fba067248962f6737d9a8d27e78a843798d739d9d2a39d73874` |
-| Paper Mario US   | papermario.us.z64 | `9ec6d2a5c2fca81ab86312328779fd042b5f3b920bf65df9f6b87b376883cb5b` |
-| Paper Mario PAL  | papermario.us.z64 | `aea89279731b2a45c079095c5a8d1c8827b3e3cc8024d89e6bdc1aa3e7aa79f3` |
-| Paper Mario iQue | papermario.cn.z64 | `14c76fd41844e9805b2119b4aacf2ce59383c467c978be005fc9283edf63bf28` |
-| TMC Demo JP      | tmc.demo.jp.gba   | `f2e91f7f9950ae840d8840ba324ea65527e235f19b5d2395b75d80fd5a465c4f` |
-| TMC Demo US      | tmc.demo.gba      | `1babc4d5754cc03d2c59dc74d8179e1a5de600b76a93f09667a29080e1bbfb33` |
-| TMC EU           | tmc.eu.gba        | `c84645731952b7677f514ae222683504066334ab2af904e64a8a84ffc1af46c6` |
-| TMC JP           | tmc.jp.gba        | `16ac2572ba17e9cb2a70093d41f97ef8cff66c56417e45ea98adacdc51bb4b38` |
-| TMC US           | tmc.us.gba        | `bedc74df62755f705398273de8ed3bc59be610cf55760d0b9aa277f1f5035e73` |
-| Animal Forest JP | af.jp.z64         | `d9417be056534fcc0bdff2e6cd5f1135511be7c0a4dace04a96a2649596ce908` |
+| Game (version)   | Desired filename     | SHA256 Hash                                                        |
+| ---------------- | -------------------- | ------------------------------------------------------------------ |
+| OOT MQ Debug     | oot-gc-eu-mq-dbg.z64 | `38aff72bac70f1dcd1562174aa271a8e136bfa94f585a132ce892e40c4775a6f` |
+| OOT GC PAL MQ    | oot-gc-eu-mq.z64     | `ed392a890d5fab1c4d6863c69a40df6ca966f568160f2b2a9a73e5d02a6e93c2` |
+| MM US            | mm.us.rev1.z64       | `efb1365b3ae362604514c0f9a1a2d11f5dc8688ba5be660a37debf5e3be43f2b` |
+| Paper Mario JP   | papermario.jp.z64    | `a62c669817f87fba067248962f6737d9a8d27e78a843798d739d9d2a39d73874` |
+| Paper Mario US   | papermario.us.z64    | `9ec6d2a5c2fca81ab86312328779fd042b5f3b920bf65df9f6b87b376883cb5b` |
+| Paper Mario PAL  | papermario.us.z64    | `aea89279731b2a45c079095c5a8d1c8827b3e3cc8024d89e6bdc1aa3e7aa79f3` |
+| Paper Mario iQue | papermario.cn.z64    | `14c76fd41844e9805b2119b4aacf2ce59383c467c978be005fc9283edf63bf28` |
+| TMC Demo JP      | tmc.demo.jp.gba      | `f2e91f7f9950ae840d8840ba324ea65527e235f19b5d2395b75d80fd5a465c4f` |
+| TMC Demo US      | tmc.demo.gba         | `1babc4d5754cc03d2c59dc74d8179e1a5de600b76a93f09667a29080e1bbfb33` |
+| TMC EU           | tmc.eu.gba           | `c84645731952b7677f514ae222683504066334ab2af904e64a8a84ffc1af46c6` |
+| TMC JP           | tmc.jp.gba           | `16ac2572ba17e9cb2a70093d41f97ef8cff66c56417e45ea98adacdc51bb4b38` |
+| TMC US           | tmc.us.gba           | `bedc74df62755f705398273de8ed3bc59be610cf55760d0b9aa277f1f5035e73` |
+| Animal Forest JP | af.jp.z64            | `d9417be056534fcc0bdff2e6cd5f1135511be7c0a4dace04a96a2649596ce908` |
 
 ## Building image locally
 
