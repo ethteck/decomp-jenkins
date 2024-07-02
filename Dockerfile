@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent@sha256:6a158c98abec3dafc507c465851112b77319ca81636aee8ff854b67c2f4bbbff
+FROM jenkins/inbound-agent
 
 ENV DEBIAN_FRONTEND=noninteractive
 
