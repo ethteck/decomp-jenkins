@@ -61,10 +61,10 @@ RUN pip3 install --break-system-packages --no-cache \
     watchdog
 
 # llvm 14
-RUN wget https://apt.llvm.org/llvm.sh \
-    && chmod +x llvm.sh \
-    && ./llvm.sh 14 \
-    && rm ./llvm.sh
+#RUN wget https://apt.llvm.org/llvm.sh \
+#    && chmod +x llvm.sh \
+#    && ./llvm.sh 14 \
+#    && rm ./llvm.sh
 RUN apt-get update && apt-get install -y \
     clang-format-14 \
     clang-tidy-14
