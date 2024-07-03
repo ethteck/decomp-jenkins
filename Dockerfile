@@ -4,8 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 USER root
 
-RUN apt-get update && apt-get install -y \
-    binutils-mips-linux-gnu \
+# Combine apt-get update and install commands, and clean up after installation
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ccache \
     cmake \
@@ -24,15 +24,31 @@ RUN apt-get update && apt-get install -y \
     python3-venv \
     software-properties-common \
     wget \
-    zlib1g-dev
+    zlib1g-dev \
+    clang-format-14 \
+    clang-tidy-14 \
+    && rm -rf /var/lib/apt/lists/*
 
-# TODO: replace with WiBo and symlink wibo -> /usr/bin/wine
+# Install binutils for mips-linux-gnu and build it
+RUN wget https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.gz \
+    && tar -xvf binutils-2.42.tar.gz \
+    && cd binutils-2.42 \
+    && ./configure --target=mips-linux-gnu --disable-multilib \
+    && make \
+    && make install \
+    && cd .. \
+    && rm -rf binutils-2.42 binutils-2.42.tar.gz \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add i386 architecture and install wine32, then clean up
 RUN dpkg --add-architecture i386 && apt-get update \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
         -o APT::Immediate-Configure=false wine32 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --break-system-packages --no-cache \
+# Install Python packages
+RUN pip3 install --break-system-packages --no-cache-dir \
     ansiwrap \
     attrs \
     capstone \
@@ -60,42 +76,36 @@ RUN pip3 install --break-system-packages --no-cache \
     tqdm \
     watchdog
 
-# llvm 14
-#RUN wget https://apt.llvm.org/llvm.sh \
-#    && chmod +x llvm.sh \
-#    && ./llvm.sh 14 \
-#    && rm ./llvm.sh
-RUN apt-get update && apt-get install -y \
-    clang-format-14 \
-    clang-tidy-14
-
-# ccache
+# ccache setup
 RUN cp /usr/bin/ccache /usr/local/bin/ \
-    && ln -s ccache /usr/local/bin/gcc \
-    && ln -s ccache /usr/local/bin/g++ \
-    && ln -s ccache /usr/local/bin/cc \
-    && ln -s ccache /usr/local/bin/c++
+    && ln -s /usr/local/bin/ccache /usr/local/bin/gcc \
+    && ln -s /usr/local/bin/ccache /usr/local/bin/g++ \
+    && ln -s /usr/local/bin/ccache /usr/local/bin/cc \
+    && ln -s /usr/local/bin/ccache /usr/local/bin/c++
 
-# qemu-irix
+# Download qemu-irix and make it executable
 RUN wget -qO /usr/bin/qemu-irix https://github.com/zeldaret/oot/releases/download/0.1q/qemu-irix \
     && chmod +x /usr/bin/qemu-irix
 
-# devkitARM
+# Copy devkitARM from another image
 COPY --from=devkitpro/devkitarm:20220531 /opt/devkitpro /opt/devkitpro
 
+
+# Set up Jenkins user
 USER jenkins
 
+# Environment variables for devkitARM
 ENV DEVKITPRO=/opt/devkitpro
 ENV DEVKITARM=${DEVKITPRO}/devkitARM
 ENV DEVKITPPC=${DEVKITPRO}/devkitPPC
 ENV PATH=${DEVKITPRO}/tools/bin:$PATH
 
-# agbcc (relies on devkitARM)
-RUN git clone https://github.com/pret/agbcc \
-    && cd agbcc \
+# Clone and build agbcc
+RUN git clone https://github.com/pret/agbcc /home/jenkins/agbcc \
+    && cd /home/jenkins/agbcc \
     && ./build.sh
 ENV AGBCC=/home/jenkins/agbcc
 
-# cargo
+# Install and configure Rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
 ENV PATH=/home/jenkins/.cargo/bin:$PATH
