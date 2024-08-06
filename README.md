@@ -30,10 +30,14 @@ Below are the supported ROMs and their filenames. They should be placed in your 
 
 | Game (version)   | Desired filename     | SHA1 Hash                                  |
 | ---------------- | -------------------- | ------------------------------------------ |
-| OOT MQ Debug     | oot-gc-eu-mq-dbg.z64 | `bdd50f5e84d6fe2683dac92de3fd0485c06c1b51` |
-| OOT GC PAL MQ    | oot-gc-eu-mq.z64     | `f46239439f59a2a594ef83cf68ef65043b1bffe2` |
+| OOT GC JP        | oot-gc-jp.z64        | `0769c84615422d60f16925cd859593cdfa597f84` |
+| OOT GC JP MQ     | oot-gc-jp-mq.z64     | `dd14e143c4275861fe93ea79d0c02e36ae8c6c2f` |
+| OOT GC JP CE     | oot-gc-jp-ce.z64     | `2ce2d1a9f0534c9cd9fa04ea5317b80da21e5e73` |
+| OOT GC US        | oot-gc-us.z64        | `b82710ba2bd3b4c6ee8aa1a7e9acf787dfc72e9b` |
+| OOT GC US MQ     | oot-gc-us-mq.z64     | `8b5d13aac69bfbf989861cfdc50b1d840945fc1d` |
 | OOT GC PAL       | oot-gc-eu.z64        | `0227d7c0074f2d0ac935631990da8ec5914597b4` |
-| OOT GC NTSC      | oot-gc-us.z64        | `b82710ba2bd3b4c6ee8aa1a7e9acf787dfc72e9b` |
+| OOT GC PAL MQ    | oot-gc-eu-mq.z64     | `f46239439f59a2a594ef83cf68ef65043b1bffe2` |
+| OOT MQ Debug     | oot-gc-eu-mq-dbg.z64 | `bdd50f5e84d6fe2683dac92de3fd0485c06c1b51` |
 | MM US            | mm.us.rev1.z64       | `d6133ace5afaa0882cf214cf88daba39e266c078` |
 | Paper Mario JP   | papermario.jp.z64    | `b9cca3ff260b9ff427d981626b82f96de73586d3` |
 | Paper Mario US   | papermario.us.z64    | `3837f44cda784b466c9a2d99df70d77c322b97a0` |
