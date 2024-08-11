@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gdebi \
     libcapstone-dev \
     libpng-dev \
+    libxml2-dev \
     libyaml-dev \
     ninja-build \
     pkg-config \
