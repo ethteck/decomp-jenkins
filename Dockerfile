@@ -84,10 +84,6 @@ RUN cp /usr/bin/ccache /usr/local/bin/ \
     && ln -s /usr/local/bin/ccache /usr/local/bin/cc \
     && ln -s /usr/local/bin/ccache /usr/local/bin/c++
 
-# Download qemu-irix and make it executable
-RUN wget -qO /usr/bin/qemu-irix https://github.com/zeldaret/oot/releases/download/0.1q/qemu-irix \
-    && chmod +x /usr/bin/qemu-irix
-
 # Copy devkitARM from another image
 COPY --from=devkitpro/devkitarm:20220531 /opt/devkitpro /opt/devkitpro
 
