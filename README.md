@@ -30,6 +30,11 @@ Below are the supported ROMs and their filenames. They should be placed in your 
 
 | Game (version)   | Desired filename     | SHA1 Hash                                  |
 | ---------------- | -------------------- | ------------------------------------------ |
+| OOT N64 1.0 US   | oot-ntsc-1.0-us.z64  | `ad69c91157f6705e8ab06c79fe08aad47bb57ba7` |
+| OOT N64 1.1 US   | oot-ntsc-1.1-us.z64  | `d3ecb253776cd847a5aa63d859d8c89a2f37b364` |
+| OOT N64 1.2 US   | oot-ntsc-1.2-us.z64  | `41b3bdc48d98c48529219919015a1af22f5057c2` |
+| OOT N64 1.0 PAL  | oot-pal-1.0.z64      | `328a1f1beba30ce5e178f031662019eb32c5f3b5` |
+| OOT N64 1.1 PAL  | oot-pal-1.1.z64      | `cfbb98d392e4a9d39da8285d10cbef3974c2f012` |
 | OOT GC JP        | oot-gc-jp.z64        | `0769c84615422d60f16925cd859593cdfa597f84` |
 | OOT GC JP MQ     | oot-gc-jp-mq.z64     | `dd14e143c4275861fe93ea79d0c02e36ae8c6c2f` |
 | OOT GC JP CE     | oot-gc-jp-ce.z64     | `2ce2d1a9f0534c9cd9fa04ea5317b80da21e5e73` |
