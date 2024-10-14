@@ -17,6 +17,7 @@ Spin up a Docker container, mounting in the `roms` directory that you just creat
 
 ```sh
 docker run \
+    --restart always
     -v "$(pwd)"/roms:/usr/local/etc/roms \
     --init ghcr.io/ethteck/decomp-jenkins:latest \
     -url https://jenkins.deco.mp/ MY_SECRET MY_AGENT_NAME
