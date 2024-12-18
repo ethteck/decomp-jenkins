@@ -43,7 +43,7 @@ Below are the supported ROMs and their filenames. They should be placed in your 
 | OOT GC US MQ         | oot-gc-us-mq.z64     | `8b5d13aac69bfbf989861cfdc50b1d840945fc1d` |
 | OOT GC PAL           | oot-gc-eu.z64        | `0227d7c0074f2d0ac935631990da8ec5914597b4` |
 | OOT GC PAL MQ        | oot-gc-eu-mq.z64     | `f46239439f59a2a594ef83cf68ef65043b1bffe2` |
-| OOT MQ Debug         | oot-gc-eu-mq-dbg.z64 | `bdd50f5e84d6fe2683dac92de3fd0485c06c1b51` |
+| OOT MQ Debug         | oot-gc-eu-mq-dbg.z64 | `bdd50f5e84d6fe2683dac92de3fd0485c06c1b51` <br>`517bd9714c73cb96c21e7c2ef640d7b55186102f` |
 | MM US                | mm.us.rev1.z64       | `d6133ace5afaa0882cf214cf88daba39e266c078` |
 | Paper Mario JP       | papermario.jp.z64    | `b9cca3ff260b9ff427d981626b82f96de73586d3` |
 | Paper Mario US       | papermario.us.z64    | `3837f44cda784b466c9a2d99df70d77c322b97a0` |
