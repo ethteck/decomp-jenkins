@@ -20,7 +20,8 @@ docker run \
     --restart always \
     -v "$(pwd)"/roms:/usr/local/etc/roms \
     --init ghcr.io/ethteck/decomp-jenkins:latest \
-    -url https://jenkins.deco.mp/ MY_SECRET MY_AGENT_NAME
+    -url https://jenkins.deco.mp/ -secret MY_SECRET -name MY_AGENT_NAME \
+    -webSocket
 ```
 
 **NOTE:** You can pass the `--detach` argument to `docker run` to run the container in the background.
