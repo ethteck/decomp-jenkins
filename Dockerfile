@@ -88,7 +88,7 @@ RUN cp /usr/bin/ccache /usr/local/bin/ \
 COPY --from=devkitpro/devkitarm:20220531 /opt/devkitpro /opt/devkitpro
 
 
-# Set up Jenkins user
+# Set up Jenkins user 
 USER jenkins
 
 # Environment variables for devkitARM
