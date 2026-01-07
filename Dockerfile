@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent:bookworm
+FROM jenkins/inbound-agent:bookworm-jdk21
 
 ENV DEBIAN_FRONTEND=noninteractive
 
